@@ -1,4 +1,4 @@
-/*
+
 var SerialPort = require("serialport").SerialPort
 var serialPort = new SerialPort("/dev/tty.usbserial-A60048PS", {
   baudrate: 9600
@@ -11,7 +11,7 @@ serialPort.on("open", function () {
   });
 });
 
-*/
+
 var express = require('express');
 var app = express();
 
@@ -24,7 +24,7 @@ var toggle = function() {
 
 app.post('/toggle', function(req, res) {
   console.log('toggling');
-  //toggle();
+  toggle();
   res.redirect('/progress.html'); 
   res.end();
 });
