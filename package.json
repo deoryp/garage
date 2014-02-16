@@ -1,0 +1,6 @@
+{
+  "name": "garage",
+  "dependencies": {
+    "serialport": "~1.3.1"
+  }
+}
