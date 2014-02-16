@@ -1,0 +1,19 @@
+#! /bin/sh
+# /etc/init.d/garage
+
+case "$1" in
+  start)
+    sudo forever -l /home/pi/garage/daemon.log -a -o /home/pi/garage/out.log -e /home/pi/garage/error.log start /home/pi/garage/serial.js
+    sleep 1
+    ;;
+  stop)
+    sudo forever stop /home/pi/garage/serial.js
+    sleep 1
+    ;;
+  *)
+    echo "Usage: /etc/init.d/garage {start|stop}"
+    exit 1
+    ;;
+esac
+
+exit 0
