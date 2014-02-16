@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Garage Door</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+      
+    </head>
+  <body>
+    <div class="container">
+    <div class="jumbotron">
+
+      <div class="progress progress-striped active">
+        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script>
+      function animate_scroll(step) {
+        setTimeout(function () {
+          step++;
+          $(".progress-bar").width(step + "%");
+          if (step != 100) {
+              animate_scroll(step);
+          } else {
+              setTimeout(function () {
+                  self.location="/";
+              }, 300);
+          }
+        }, 50); 
+      }
+      animate_scroll(0);
+    </script>
+    
+  </body>
+</html>
